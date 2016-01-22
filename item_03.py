@@ -3,13 +3,11 @@
 '''Item 3 from Effective Python'''
 
 import logging
-from pprint import pprint
-from sys import stdout as STDOUT
 
 
 # Example 1
 def to_str(bytes_or_str):
-    '''In Python 3, you’ll need one method that takes a str or bytes and
+    '''In Python 3, you'll need one method that takes a str or bytes and
     always returns a str .'''
     if isinstance(bytes_or_str, bytes):
         value = bytes_or_str.decode('utf-8')
@@ -23,7 +21,7 @@ print(repr(to_str('foo')))
 
 # Example 2
 def to_bytes(bytes_or_str):
-    '''You’ll need another method that takes a str or bytes and always
+    '''You'll need another method that takes a str or bytes and always
     returns a bytes .'''
     if isinstance(bytes_or_str, str):
         value = bytes_or_str.encode('utf-8')
