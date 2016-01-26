@@ -2,10 +2,6 @@
 
 '''Item 7 from Effective Python'''
 
-import logging
-from pprint import pprint
-from sys import stdout as STDOUT
-
 
 # Example 1
 ''' you want to compute the square of each number in a list. You can do this
