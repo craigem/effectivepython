@@ -2,10 +2,6 @@
 
 '''Item 8 from Effective Python'''
 
-import logging
-from pprint import pprint
-from sys import stdout as STDOUT
-
 
 # Example 1
 ''' simplify a matrix (a list containing other lists) into one flat list of all
