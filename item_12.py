@@ -8,16 +8,14 @@
 block '''
 print('Example 1:\n==========')
 
-for i in range(3):
+for  i in range(3):
     print('Loop %d' % i)
 else:
     print('Else block!')
 
 
 # Example 2
-''' a new programmer might assume that the else part of for / else means, “Do
-this if the loop wasn’t completed.” In reality, it does exactly the opposite
-'''
+''' Using a break statement in a loop will actually skip the else block '''
 print('\nExample 2:\n==========')
 
 for i in range(3):
@@ -29,8 +27,7 @@ else:
 
 
 # Example 3
-''' Another surprise is that the else block will run immediately if you loop
-over an empty sequence '''
+''' the else block will run immediately if you loop over an empty sequence '''
 print('\nExample 3:\n==========')
 
 for x in []:
@@ -46,7 +43,7 @@ print('\nExample 4:\n==========')
 while False:
     print('Never runs')
 else:
-    print('While Else Block!')
+    print('While Else block!')
 
 
 # Example 5
@@ -66,26 +63,25 @@ else:
 
 
 # Example 6
+''' The first approach is to return early when you find the condition you’re
+looking for '''
 print('\nExample 6:\n==========')
 
 def coprime(a, b):
-    ''' In practice, you wouldn’t write the code this way. Instead, you’d write a
-    helper function to do the calculation '''
     for i in range(2, min(a, b) + 1):
         if a % i == 0 and b % i == 0:
             return False
     return True
 
-print('Are 4 and 9 coprime? %s' % coprime(4, 9))
-print('Are 3 and 6 coprime? %s' % coprime(3, 6))
+print(coprime(a, b))
 
 
 # Example 7
+''' The second way is to have a result variable that indicates whether you’ve
+found what you’re looking for in the loop '''
 print('\nExample 7:\n==========')
 
 def coprime2(a, b):
-    ''' The second way is to have a result variable that indicates whether you’ve
-    found what you’re looking for in the loop '''
     is_coprime = True
     for i in range(2, min(a, b) + 1):
         if a % i == 0 and b % i == 0:
@@ -93,5 +89,4 @@ def coprime2(a, b):
             break
     return is_coprime
 
-print('Are 4 and 9 coprime? %s' % coprime2(4, 9))
-print('Are 3 and 6 coprime? %s' % coprime2(3, 6))
+print(coprime2(a, b))
